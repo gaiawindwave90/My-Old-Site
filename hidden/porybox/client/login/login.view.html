@@ -1,0 +1,35 @@
+<md-card>
+  <md-toolbar class="md-hue-1">
+    <div class="md-toolbar-tools">
+      <span>Login</span>
+    </div>
+  </md-toolbar>
+  <md-card-content>
+    <form role="form" name="loginForm" ng-submit="auth.login()" method="POST">
+      <md-input-container class="md-block">
+        <input
+          type="text" name="username" required ng-model="auth.loginName" aria-label="Username"
+          ng-change="loginForm.password.$setValidity('correct', true)"
+        >
+        <label>Username</label>
+      </md-input-container>
+      <md-input-container class="md-block">
+        <input
+          type="password" name="password"
+          required
+          ng-model="auth.loginPassword"
+          aria-label="Password"
+          ng-change="loginForm.password.$setValidity('correct', true)"
+        >
+        <label>Password</label>
+        <div ng-messages="loginForm.password.$error">
+          <div ng-message="correct">Incorrect username/password combination</div>
+        </div>
+      </md-input-container>
+      <p><a href="/#/forgotPassword">Forgot password/username?</a></p>
+      <md-card-actions layout="row" layout-align="center">
+        <md-button type="submit" class="md-raised" ng-disabled="loginForm.$invalid">Sign in</md-button>
+      </md-card-actions>
+    </form>
+  </md-card-content>
+</md-card>
