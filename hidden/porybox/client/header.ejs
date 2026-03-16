@@ -1,0 +1,25 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <a href="/#/">
+      <img src="/img/logo-header.png" alt="Porybox"/>
+    </a>
+    <h2>
+      <span hide-xs>Porybox</span>
+    </h2>
+
+    <span flex></span>
+
+    <md-icon ng-if="main.serverStatus.readOnly" md-offset="10 50" aria-label>
+      <md-tooltip>Porybox is temporarily in read-only mode.</md-tooltip>
+      <i class="material-icons">error</i>
+    </md-icon>
+    <% if (typeof user !== 'undefined') {%>
+      <add-menu ng-if="!main.serverStatus.readOnly" boxes="main.boxes" prefs="main.prefs" selected="main.selected" server-status="main.serverStatus"></add-menu>
+      <md-button aria-label="Help & FAQ" href="/#/faq">Help & FAQ</md-button>
+      <user-menu name="'<%= user.name %>'"></user-menu>
+    <% } else { %>
+      <md-button aria-label="Help & FAQ" href="/#/faq">Help & FAQ</md-button>
+      <md-button aria-label="Login/Register" href="/#/login">Login/Register</md-button>
+    <% } %>
+  </div>
+</md-toolbar>
