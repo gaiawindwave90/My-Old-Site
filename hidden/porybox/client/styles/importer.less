@@ -1,0 +1,668 @@
+@cache-version: `process.env.npm_package_version` ;
+
+/*******************************
+ * Import angular-csp.css to prevent angular from trying to use inline scripts/styles
+ *******************************/
+
+@import (inline) '../../node_modules/angular/angular-csp.css';
+
+/*******************************
+ * Import Material design lite
+ *******************************/
+@import (inline) '../../node_modules/angular-material/angular-material.css';
+
+/******************************
+ *
+ ******************************/
+
+@import 'boxsprites';
+
+@import 'ribbons';
+
+.add-button {
+  bottom: 40px;
+  right: 20px;
+  position: absolute;
+}
+
+.hide-scroll {
+  overflow: hidden;
+}
+
+i.material-icons.small {
+  font-size: 14px;
+}
+
+.layout-align-end-stretch i.material-icons.small {
+  margin-right: -3px;
+  vertical-align: middle;
+}
+
+main {
+  flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  // Toasts need their parent to be static
+  overflow: hidden;
+}
+
+#scroll-container {
+  // But we still want to be able to scroll
+  overflow: auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  height: 20px;
+  font-size: small;
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-left {
+  margin-left: 3px;
+}
+
+.footer-right {
+  text-align: right;
+  margin-right: 3px;
+}
+
+.pagination-container {
+  text-align: center;
+}
+
+
+/*******************************
+ * Overrides
+ *******************************/
+
+h1, h2 {
+  margin: 0;
+}
+
+code {
+  border: 1px solid #eeeee2;
+  background-color: #fcfcfc;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+blockquote {
+  border: 1px solid #ddd;
+  border-width: 0 0 0 2px;
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #0099e6;
+}
+
+a:visited {
+  color: #5e35b1;
+}
+
+.box-card a, .box-card a:visited, footer a, footer a:visited, md-menu-item a:visited, .pokemon-card-mini a, .pokemon-card-mini a:visited, md-toolbar a:visited {
+  color: inherit;
+}
+
+md-card md-card-title {
+  padding: 10px 16px;
+}
+
+md-card md-card-header {
+  background-color: rgba(128, 216, 255, .45);
+  padding: 5px 10px 0 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+md-card md-card-content {
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.summary > md-card-content {
+  line-height: 22px;
+}
+
+.card-headline {
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 0 0 5px 12px;
+}
+
+md-card-title-text {
+  overflow-x: hidden;
+}
+
+md-icon svg {
+  fill: inherit;
+}
+
+md-divider {
+  margin: 6px 0;
+}
+
+@media (min-width: 370px) {
+  md-dialog {
+    min-width: 360px;
+  }
+  md-dialog.wide-modal {
+    min-width: 90%;
+  }
+}
+
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+  min-height: 210px;
+}
+
+.md-button.md-icon-button {
+  vertical-align: middle;
+}
+
+.back-button {
+  margin-left: -15px;
+}
+
+md-card > md-toolbar {
+  border-radius: 2px 2px 0 0;
+}
+
+md-toolbar.md-tall {
+  height: 158px;
+  max-height: 188px;
+}
+
+md-dialog-content textarea[md-no-autogrow].md-input {
+  height: inherit;
+  overflow-y: auto;
+}
+
+md-icon {
+  min-height: inherit;
+  min-width: inherit;
+}
+
+body, md-content, .md-subheader {
+  background-color: rgb(255,255,255);
+}
+
+md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+  overflow: visible;
+}
+
+.box-list md-progress-circular {
+  margin: 55px 40px;
+}
+
+md-tooltip .md-content {
+  background-color: rgba(25,25,25,.8);
+}
+
+md-tooltip {
+  color: #fff;
+}
+
+/*******************************
+ * Header
+ *******************************/
+
+ .unlisted-lock {
+   color: orange;
+ }
+
+.md-toolbar-tools img {
+  height: 74px;
+  margin: 0 7px 0px -5px;
+}
+
+.md-toolbar-tools .unlisted-lock {
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+
+/*******************************
+ * Box cards
+ *******************************/
+
+.box-header {
+  background-color: rgba(45, 45, 45, .2);
+  padding: 7px 10px;
+}
+
+.box-card .unlisted-lock {
+  position: absolute;
+  top: 8px;
+  right: 7px;
+}
+
+@media (min-width: 600px) {
+  .box-card {
+    width: 250px;
+    height: 140px;
+  }
+}
+
+.box-card {
+  max-height: 140px;
+  overflow: hidden;
+}
+
+box-card a {
+  height: 100%;
+}
+
+box-card md-card-content {
+  height: ~"calc(100% - 42px)";
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+pokemon-icon, pokemon-icon .icon-container {
+  width: 40px;
+  height: 30px;
+  float: left;
+}
+
+
+md-card.box-card md-card-content {
+  padding: 4px 5px;
+}
+
+ /*******************************
+  * Pokemon cards
+  *******************************/
+
+@media (min-width: 600px) {
+  .pokemon-card-mini {
+    width: 166px;
+    height: 220px;
+  }
+
+  .summary {
+    width: 344px;
+  }
+}
+
+@media (max-width: 599px) {
+  .pokemon-card-mini {
+    display: block;
+    width: auto;
+  }
+
+  .summary {
+    display: block;
+  }
+}
+
+.summary {
+  position: relative;
+}
+
+h1.summary-toolbar {
+  margin-left: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-container {
+  position: relative;
+}
+
+.icon-container > img, .icon-container > span > img {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+}
+
+.icon-container > span > img {
+  bottom: 1px;
+}
+.pokemon-container {
+  position: absolute;
+  right: 170px;
+}
+
+.pokemon-container > img {
+  position: absolute;
+}
+
+.pokemon-bg {
+  width: 120px;
+}
+
+.pokemon-egg {
+  margin-left: 5px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.icon-pentagon, .icon-clover, .icon-gameboy, .icon-shiny {
+  font-size: 10px;
+}
+
+.icon-pentagon, .icon-clover, .icon-gameboy {
+  width: 9px;
+}
+
+.icon-clover {
+  color: black;
+}
+
+.icon-shiny {
+  width: 10px;
+}
+
+.box-marking {
+  width: 9px;
+}
+
+.box-marking.blue, .box-marking.pink,
+.box-marking.blue *, .box-marking.pink *,
+.marked {
+  opacity: 1;
+}
+
+.box-marking.blue svg * {
+  fill: #00bfff;
+}
+
+.box-marking.pink svg * {
+  fill: #ff75b3;
+}
+
+// Prevent people from overflowing markdown text boxes, e.g. by embedding large images
+[marked] * {
+  max-width: 100%;
+}
+
+.pokeball, .held-item {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+  background-image: url('/img/icons/items.png?v=@{cache-version}');
+}
+
+.pokeball {
+  margin-left: -5px;
+}
+
+.pokemon-ha {
+  font-style: italic;
+}
+
+@import (inline) 'items.css';
+
+.language-tag {
+  color: #fff;
+  background-color: #505050;
+  border: 3px solid #505050;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: -2px;
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 210px;
+}
+
+.bar-container {
+  width: 100%;
+  height: 13px;
+  position: relative;
+  background-color: #f1f1f1;
+  top: 3px;
+}
+
+.progress-bar {
+  background-color: #757575;
+  height: 100%;
+  position: absolute;
+  line-height: inherit;
+}
+
+.progress-bar-label {
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+  width: 100%;
+}
+
+.box-marking path, .box-marking circle, .box-marking rect, .box-marking polygon {
+  fill: #000;
+  opacity: .25;
+}
+
+.marked path, .marked circle, .marked rect, .marked polygon {
+  opacity: 1;
+}
+
+span[class^='gender-'] {
+  font-size: 12px;
+}
+
+.type {
+  text-transform: capitalize;
+}
+
+.stat-total {
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.esv {
+  position: absolute;
+  font-size: 10px;
+  right: 10px;
+  bottom: 5px;
+}
+
+.handler {
+  padding-top: 10px;
+}
+
+.pokemon-card-content {
+  position: relative;
+  padding-top: .6em;
+  box-sizing: border-box;
+  height: 175px;
+}
+
+.pokemon-card-content:after {
+  content: '';
+  position: absolute;
+  background: url('data:image/svg+xml;utf-8,<svg fill="#000000" height="100" viewBox="0 0 24 24" width="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat 50%;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: -10px;
+  left: 0;
+}
+
+.draggable > md-card.pokemon-card-mini > .pokemon-card-content:after {
+  opacity: 0.15;
+}
+
+.note img {
+  max-width: 600px;
+  width: 100%;
+}
+
+.clone-list {
+  padding: 8px;
+}
+
+.clone-list > div > span {
+  margin: 0 10px 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.clone-list .visibility {
+  vertical-align: middle;
+}
+
+.visibility {
+  text-transform: capitalize;
+}
+
+.private {
+  font-style: italic;
+}
+
+.warning {
+  background-color: #FF8A65;
+}
+
+/*******************************
+ * Colors
+ *******************************/
+
+.increased-stat, .gender-female {color: #D0021B}
+.decreased-stat, .gender-male {color: #4A90E2}
+
+.icon-pentagon path {fill: #043575}
+.icon-shiny path {fill: #f9262f}
+
+.cool {background-color: #F08030}
+.beauty {background-color: #6890F0}
+.cute {background-color: #F85888}
+.clever {background-color: #78C850}
+.tough {background-color: #F8D030}
+.sheen {background-color: #eee}
+.exp-gained {background-color: #a7e4ff}
+
+.pokerus {color: #A475C4}
+
+.game-ruby {color: #a00000}
+.game-sapphire {color: #0000a0}
+.game-emerald {color: #00a000}
+.game-firered {color: #ff7327}
+.game-leafgreen {color: #00dd00}
+.game-diamond {color: #aaaaff}
+.game-pearl {color: #ffaaaa}
+.game-platinum {color: #999}
+.game-heartgold {color: #b69e00}
+.game-soulsilver {color: #7d7d92}
+.game-black {color: #444}
+.game-white {color: #929292}
+.game-black-2 {color: #424b50}
+.game-white-2 {color: #e3ced0}
+.game-x {color: #025da6}
+.game-y {color: #ea1a3e}
+.game-omega-ruby {color: #ab2813}
+.game-alpha-sapphire {color: #194166}
+.game-sun {color: #f1912b}
+.game-moon {color: #5599ca}
+.game-ultra-sun {color: #e95b2b}
+.game-ultra-moon {color: #226db5}
+.game-red {color: #ff1111}
+.game-green {color: #11bb11}
+.game-blue {color: #1111ff}
+.game-yellow {color: #d0a000}
+.game-gold {color: #daa520}
+.game-silver {color: #c0c0c0}
+.game-crystal {color: #00c1f7}
+
+.type-normal {color: #a8a878}
+.type-fire {color: #f08030}
+.type-fighting {color: #c03028}
+.type-water {color: #6890f0}
+.type-flying {color: #a890f0}
+.type-grass {color: #78c850}
+.type-poison {color: #a040a0}
+.type-electric {color: #f8d030}
+.type-ground {color: #e0c068}
+.type-psychic {color: #f85888}
+.type-rock {color: #b8a038}
+.type-ice {color: #98d8d8}
+.type-bug {color: #a8b820}
+.type-dragon {color: #7038f8}
+.type-ghost {color: #705898}
+.type-dark {color: #705848}
+.type-steel {color: #b8b8d0}
+.type-fairy {color: #ee99ac}
+
+ /*******************************
+  * Error pages
+  *******************************/
+.errorimg {
+	margin: 0 auto;
+	display: block;
+	padding-top: 50px;
+}
+
+.errorname, .errortext {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+/*******************************
+ * Hidden divs
+ *******************************/
+#hidden-info {
+  display: none;
+}
+
+/*******************************
+ * Upload button
+ *******************************/
+
+.layout-row .md-button {
+	color: rgba(255,255,255,0.87);
+	background-color: rgb(3,169,244)!important;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	height: 20px;
+}
+
+/*******************************
+ * Pokemon Upload Dropbox
+ *******************************/
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 65px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+.dragover {
+    border: 5px dashed rgb(2,119,189);
+}
