@@ -1,0 +1,76 @@
+<div ng-show="box.data.id">
+  <md-toolbar class="md-hue-1">
+    <div class="md-toolbar-tools">
+      <h1>
+        <span>
+          {{box.data.name}}
+        </span>
+      </h1>
+      <span class="unlisted-lock">
+        <md-tooltip md-direction="right">This box is unlisted.</md-tooltip>
+        <i class="material-icons" ng-if="box.data.visibility === 'unlisted'">lock_outline</i>
+      </span>
+      <span flex></span>
+      <md-button ng-if="!box.draggingEnabled" ng-disabled="!box.data.contents.length" class="md-icon-button" aria-label="Move" ng-show="box.data.owner === main.user.name || main.user.isAdmin" ng-click="box.draggingEnabled = true">
+        <md-tooltip md-direction="left">Enable dragging to move Pokémon in this box</md-tooltip>
+        <i class="material-icons">open_with</i>
+      </md-button>
+      <md-button ng-if="box.draggingEnabled" class="md-icon-button" aria-label="Done" ng-show="box.data.owner === main.user.name || main.user.isAdmin" ng-click="box.draggingEnabled = false">
+        <md-tooltip md-direction="left">Done moving Pokémon</md-tooltip>
+        <i class="material-icons">done</i>
+      </md-button>
+      <md-menu md-position-mode="target-right target" md-offset="0 50">
+        <md-button class="md-icon-button" aria-label="Box settings" ng-show="box.data.owner === main.user.name || main.user.isAdmin" ng-click="$mdOpenMenu($event)">
+          <md-tooltip md-direction="left">{{box.data.name}} settings</md-tooltip>
+          <i class="material-icons">settings</i>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ng-click="box.edit()" >
+                <div layout="row">
+                  <p flex="">Edit</p>
+                </div>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item ng-if="!box.isDeleted">
+            <md-button ng-click="box.delete()" ng-disabled="main.boxes.length === 1" ng-attr-title="{{main.boxes.length === 1 ? 'You can\'t delete your only box.' : ''}}">
+                <div layout="row">
+                  <p flex>Delete Box</p>
+                </div>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+    </div>
+  </md-toolbar>
+
+  <md-card ng-if="box.data.description">
+    <md-card-content>{{box.data.description}}</md-card-content>
+  </md-card>
+
+  <div class="box-list"
+    layout="row"
+    layout-xs="column"
+    layout-wrap
+    ng-init="box.fetch()"
+    ng-show="box.hasFullData"
+    sv-disabled="!box.draggingEnabled"
+    sv-root
+    sv-part="box.data.contents"
+    sv-grid="true"
+    sv-on-sort="box.movePkmn($item, $indexTo)"
+  >
+    <div flex-xs ng-repeat="pokemon in box.data.contents track by pokemon.id" sv-element>
+      <pokemon-card data="pokemon" ng-class="{'draggable': box.draggingEnabled}"></pokemon-card>
+    </div>
+    <md-progress-circular md-mode="indeterminate" ng-if="box.isLoading" md-diameter="100"></md-progress-circular>
+  </div>
+  <md-content layout-padding ng-if="!box.data.contents.length" layout="column" layout-align="center center">
+    <div class="md-headline">This box is empty.</div>
+    <div>
+      <add-pokemon ng-if="!main.serverStatus.readOnly && (box.data.owner === main.user.name || main.user.isAdmin)" boxes="main.boxes" prefs="main.prefs" selected="main.selected" server-status="main.serverStatus"></add-pokemon>
+    </div>
+  </md-content>
+</div>
+<div ng-if="box.errorStatusCode" ng-include="'/errors/' + box.errorStatusCode + '.html'"></div>

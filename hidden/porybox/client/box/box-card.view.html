@@ -1,0 +1,20 @@
+<md-card class="box-card">
+  <a ng-href="#/box/{{box.data.id}}" class="card-link">
+    <md-card-header>
+      <span class="card-headline">
+        {{box.data.name}}
+      </span>
+      <span class="unlisted-lock">
+        <md-tooltip md-direction="left">This box is unlisted.</md-tooltip>
+        <i class="material-icons" ng-if="box.data.visibility === 'unlisted'">lock_outline</i>
+      </span>
+    </md-card-header>
+    <md-card-content ng-init="box.fetchIcons()">
+      <div flex class="sprite-list">
+        <pokemon-icon ng-repeat="pokemon in box.data.contents" data="pokemon" flex></pokemon-icon>
+      </div>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+    </md-card-actions>
+  </a>
+</md-card>

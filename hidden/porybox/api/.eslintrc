@@ -1,0 +1,20 @@
+{
+  'globals': {
+    '_': true,
+    'passport': true,
+    'Passport': true,
+    'User': true,
+    'Box': true,
+    'Pokemon': true,
+    'PokemonHandler': true,
+    'Constants': true,
+    'UserPreferences': true,
+    'catchAsyncErrors': true,
+    'Validation': true,
+    'Email': true,
+    'DeletedUser': true,
+    'BoxOrdering': true,
+    'Util': true,
+    'PasswordReset': true
+  }
+}

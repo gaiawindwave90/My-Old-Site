@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Ladies and Gentlemen, the Chef Boyadee Sharks Ad!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="noindex"/>
+<meta name="keywords"
+content="fun, web, troll, lol, lololololo, lalalala">
+<meta name="description"
+content="You're kind of lucky that this is here, isn't it?">
+<meta name="copyright" content="GenerationStar">
+<meta name="author" content="GenesisWonder-GX">
+<style type="text/css">
+body {
+font-family: Arial,Helvetica,sans-serif;
+text-align: center;
+}
+#nocursor {
+left: 0;
+height: 100%;
+top: 0;
+width: 100%;
+position: fixed;
+}
+</style>
+<script type="text/javascript">
+/* Color Change Text
+This script and many more from -
+http://rainbow.arch.scriptmania.com/scripts/
+*/
+
+var msg = 'WELCOME!'
+var colorTimer = null;
+function toHex(n){
+var hexChars = '0123456789ABCDEF';
+if (n == 0) return n;
+var j, k;
+var temp = '';
+while (n != 0){
+j = n % 16;
+n = (n - j)/16;
+temp = hexChars.charAt(j) + temp;
+}
+return temp;
+}
+function colorize(){
+if (!document.getElementById) return;
+for (i=0; i<msg.length; i++){
+k = Math.round(Math.random() * 16777215);
+k = toHex(k);
+while (k.length < 6){
+k = k + '0';
+}
+document.getElementById('colorizer' + i).style.color = '#' + k;
+}
+colorTimer = window.setTimeout('colorize()', 050);
+}
+</script>
+<script language="JavaScript1.2">
+x = ( screen.width - 100 ) / 2;
+y = ( screen.height - 100 ) / 2;
+r = y;
+d = 0.0;
+function circulate() {
+moveTo( x + Math.cos( d ) * r, y - Math.sin( d ) * r );
+d += Math.PI / 5.0;
+if ( d >= Math.PI * 2 ) { d = 0.0; }
+}
+setInterval( 'circulate()', 100 );
+</script>
+</head>
+<body onload="colorize();">
+<div id="text"
+style="font-size: 100px; font-family: Diskun; font-weight: bold; text-align: center;">
+<script>
+for (var i=0; i<msg.length; i++){
+document.write("<span id ='colorizer" + i + "'>" + msg.charAt(i) + "</span>");
+}
+</script></div>
+<p><video style="text-align: center;" autoplay="" loop="" controls=""
+muted=""> <source src="/videos/sharks.mp4" type="video/mp4"> <source
+src="sharks.webm" type="video/webm">Your browser does not support the video element.
+</source></source></video></p>
+<p><a href="superanimeworld.net46.net/"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88" /></a></p>
+</body>
+</html>

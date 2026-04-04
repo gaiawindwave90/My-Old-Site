@@ -1,0 +1,22 @@
+
+.dextab { border: 0; border-spacing: 2px; border-collapse: seperate; width:98%; } 
+.dextab td { font-size: 0.65em;  } 
+
+.eventpoke { border: 0; border-spacing: 2px; border-collapse: seperate; width:600px; margin-left:auto; margin-right:auto;  background: #505050; border: 2px solid #383838; border-radius: 15px; -moz-border-radius: 15px;-webkit-border-radius: 15px; } 
+.eventpoke td { font-size: 0.65em; vertical-align:top; } 
+
+.footop { background: #507C36; font-size: 0.65em; color: white; text-align:center; width: 5%; text-decoration: underline; border: 1px solid #383838; border-radius: 3px; -moz-border-radius: 3px;-webkit-border-radius: 3px;  }
+
+.pkmn { background: #454545; font-size: 1.3em; color: white; text-align:center; border: 1px solid #383838; border-radius: 30px; -moz-border-radius: 30px;-webkit-border-radius: 30px;  }
+.extra { background: #454545; color: white; text-align:center; border: 1px solid #383838; border-radius: 30px; -moz-border-radius: 30px;-webkit-border-radius: 30px;  }
+.detailhead { font-weight:bold; background: #474747; border: 1px solid #383838; border-radius: 3px; -moz-border-radius: 3px;-webkit-border-radius: 3px;}
+.eventdet { width:33%; font-weight:bold; background: #474747; border: 1px solid #383838; border-radius: 3px; -moz-border-radius: 3px;-webkit-border-radius: 3px;}
+.column { width:24%;  }
+.date { width:70%; margin-left:auto; margin-right:auto;   } 
+
+.art { background: #365224; font-size: 1.3em; color: white; text-align:center; border: 1px solid #383838; border-radius: 30px; -moz-border-radius: 30px;-webkit-border-radius: 30px;  }
+.tooltab {  border-spacing: 0px; border-collapse: seperate; margin-left:auto; margin-right:auto; margin-bottom:10px;  } 
+.tooltabhead { background: #2E441E;font-size: 0.55em; color: white; border-spacing: 0px; border-collapse: seperate; margin-left:auto; margin-right:auto; margin-bottom:10px;  border: 2px solid #383838; border-radius: 15px; -moz-border-radius: 15px;-webkit-border-radius: 15px; } 
+.tooltabcon { background: #478B19;font-size: 0.55em; color: white; border-spacing: 0px; border-collapse: seperate; margin-left:auto; margin-right:auto; margin-bottom:10px;  border: 2px solid #383838; border-radius: 15px; -moz-border-radius: 15px;-webkit-border-radius: 15px; } 
+
+.alterdex { background: #62CA1C;color: black; width: 138px; height:30px; text-align: center; border-spacing: 0px; border-collapse: seperate; margin-left:auto; margin-right:auto; margin-bottom:10px; margin-top:10px;  border: 2px solid #383838; border-radius: 15px; -moz-border-radius: 15px;-webkit-border-radius: 15px; } 

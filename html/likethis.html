@@ -1,0 +1,69 @@
+﻿<html>
+<head>
+<title>Ladies and Gentlemen, Super Exciting Stuff!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="noindex"/>
+<meta name="keywords"
+content="fun, web, troll, lol, lololololo, lalalala">
+<meta name="description"
+content="You're kind of lucky that this is here, isn't it?">
+<script src="/crystaltatsuya/cheats/cheet.min.js"></script>
+<script>
+cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+openSecretDoor();
+alert('A secret door was opened. Please be careful that you may freak out by something you saw!');
+});
+</script>
+<style type="text/css">
+body {
+font-family: Arial,Helvetica,sans-serif;
+text-align: center;
+}
+#nocursor {
+left: 0;
+height: 100%;
+top: 0;
+width: 100%;
+position: fixed;
+}
+#HiddenDoor {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: red;
+}
+#secretDoor {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: white;
+}
+</style>
+</head>
+<body>
+<p><iframe width="212" height="119" src="https://www.youtube.com/embed/v5Vtw_3zeJo" frameborder="0" loop "allowfullscreen></iframe>
+<iframe width="212" height="119" src="https://www.youtube.com/embed/74ykOTdpYnw" frameborder="0" loop "allowfullscreen></iframe>
+<iframe width="212" height="119" src="https://www.youtube.com/embed/edcFGthpVII" frameborder="0" loop "allowfullscreen></iframe>
+<iframe width="212" height="119" src="https://www.youtube.com/embed/A2t9jufmxok" frameborder="0" loop "allowfullscreen></iframe>
+<iframe width="212" height="119" src="https://www.youtube.com/embed/ErfM-EKJIyQ" frameborder="0" loop "allowfullscreen></iframe></p>
+<p>Enjoy these videos I love!</p>
+<p><a href="/crystaltatsuya/superanimeworld"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88" /></a></p>
+<div id ="secretDoor"></div>
+<div onclick="window.location.href = 'https://www.youtube.com/embed/7iFXyLah2oQ';" id="HiddenDoor"></div>
+<script>
+function openSecretDoor() {
+  var elem = document.getElementById("secretDoor");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 50) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+</body>
+</html>

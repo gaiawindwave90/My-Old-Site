@@ -1,0 +1,22 @@
+body {
+  margin: 200px auto auto auto;
+  background-attachment: fixed;
+  text-align: center;
+  font-family: YI Chalkboard;
+  background-color: #286048;
+  color: white;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+@font-face {
+   font-family: YI Chalkboard;
+   src: url(YI_Chalkboard.ttf);
+}
+
+* {
+   font-family: YI Chalkboard;
+}

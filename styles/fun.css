@@ -1,0 +1,141 @@
+@keyframes fontbulger {
+  0% {
+    font-size: 16px;
+  }
+  30% {
+    font-size: 20px;
+  }
+  100% {
+    font-size: 16px;
+  }
+}
+
+.bulge {
+   animation: fontbulger 1s infinite;
+}
+
+.rainbow{
+text-shadow:1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+animation:rainbow 1s infinite}
+
+@keyframes rainbow{
+0%{color:#f00}
+10%{color:#ff8000}
+20%{color:#ff0}
+30%{color:#80ff00}
+40%{color:#0f0}
+50%{color:#00ff80}
+60%{color:#0ff}
+70%{color:#0080ff}
+80%{color:#00f}
+90%{color:#8000ff}
+100%{color:#ff0080}}
+
+ @-webkit-keyframes blur {
+   0%   {filter: blur(0px); }
+   50%   {filter: blur(1px); }
+   100%   {filter: blur(0px); }
+}
+@keyframes blur {
+   0%   {filter: blur(0px); }
+   50%   {filter: blur(1px); }
+   100%   {filter: blur(0px); }
+}
+
+.blur {
+   animation: blur 1s infinite;
+}
+.blink {
+  -webkit-animation-name: toggle;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: toggle;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: toggle;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes toggle {
+         from {
+            visibility:hidden;
+         }
+     50% {
+            visibility:hidden;
+         }
+     to {
+            visibility:visible;
+      }
+ }
+@-webkit-keyframes toggle {
+         from {
+            visibility:hidden;
+         }
+     50% {
+            visibility:hidden;
+         }
+     to {
+            visibility:visible;
+      }
+ }
+
+@-webkit-keyframes trembling {
+  0% {
+    left:-4px;top:2px;
+  }
+  25% {
+   left:4px;top:-2px;
+  }
+  50% {
+  left:2px;top:-4px;
+  }
+  75% {
+  left:-2px;top:4px;
+  }
+  100% {
+  left:8px;top:8px;
+  }
+}
+@keyframes trembling {
+  0% {
+    left:-4px;top:2px;
+  }
+  25% {
+   left:4px;top:-2px;
+  }
+  50% {
+  left:2px;top:-4px;
+  }
+  75% {
+  left:-2px;top:4px;
+  }
+  100% {
+  left:8px;top:8px;
+  }
+}
+.trembling,.shaking,.trm,.shk {
+    position:relative;
+  -webkit-animation: trembling 0.1s cubic-bezier(0,.5,.5,1) infinite;
+  -moz-animation: trembling 0.1s cubic-bezier(0,.5,.5,1) infinite;
+  -ms-animation: trembling 0.1s cubic-bezier(0,.5,.5,1) infinite;
+  -o-animation: trembling 0.1s cubic-bezier(0,.5,.5,1) infinite;
+  animation: trembling 0.1s cubic-bezier(0,.5,.5,1) infinite;
+}
+.spin {
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

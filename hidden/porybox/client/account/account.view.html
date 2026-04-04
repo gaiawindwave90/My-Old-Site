@@ -1,0 +1,21 @@
+<md-content>
+  <md-tabs md-dynamic-height>
+    <md-tab label="Preferences">
+      <div>
+        <edit-prefs prefs="main.prefs"></edit-prefs>
+      </div>
+    </md-tab>
+
+    <md-tab label="Account">
+      <div layout="column" layout-gt-xs="row" layout-wrap>
+        <div flex-gt-xs="50">
+          <edit-password></edit-password>
+        </div>
+        <div flex-gt-xs="50">
+          <edit-email user="main.user"></edit-email>
+        </div>
+      </div>
+    </md-tab>
+  </md-tabs>
+
+</md-content>

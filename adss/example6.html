@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Detect ad-blocking software - Example 3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+<div class="a">Advertisement</div>
+<div id="nami">Hi</div>
+<div id="nami2">Hi</div>
+
+<script type="text/javascript">
+<!--
+	var adblock = true;
+//-->
+</script>
+<script type="text/javascript" src="ad/adframe.js"></script>
+<script type="text/javascript">
+<!--
+	if(adblock) {
+		var allElements = document.getElementsByTagName('div');
+		for (var i = 0; i < allElements.length; i++) {
+			if (allElements[i].className == 'a') {
+				allElements[i].innerHTML = '<b>Adblock Detected!</b><br>If you see this text that replaces the original next, that means that you blocked the ads. Please whitelist this site to the anti-adblock so a original next shows up again. Thank you!';
+                document.getElementById('nami').innerHTML='<b>Adblock Detected!</b>';
+				document.getElementById('nami2').innerHTML='<b>Adblock Detected!</b>';	
+			}
+		}
+	}
+// http://www.paypal.de/spendenbutton
+// http://detect-ad-blocking-software.webconrad.com/
+//-->
+</script>
+</body>
+</html>

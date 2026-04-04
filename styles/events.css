@@ -1,0 +1,39 @@
+#events, #secretlinkevent, #eventpassword, #eventpassworddownload {
+border: 2px solid #888888;
+font-family: bubbleboddy;
+color: white;
+border-radius: 30px;
+box-shadow: 0px 0px 5px 5px #FF6464,0px 0px 10px 5px #FFC864,0px 0px 15px 5px #FFFF64,0px 0px 20px 5px #64FF64,0px 0px 25px 5px #64FFFF,0px 0px 30px 5px #6464FF,0px 0px 35px 5px #C864FF;
+margin-left: 400px;
+font-size: 18px;
+text-align: center;
+background-color: black;
+background-image: url(http://ak.picdn.net/shutterstock/videos/691411/thumb/1.jpg);
+background-position: center top;
+width: 40%;
+}
+#events b, #secretlinkevent b, #eventpassword b, #eventpassworddownload b {
+font-size: 20px;
+text-transform: capitalize;
+font-style: oblique;
+font-weight: bolder;
+text-decoration: underline;
+animation:rainbow 1s infinite}
+}
+.rainbow{
+text-shadow:1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+animation:rainbow 1s infinite}
+
+@keyframes rainbow{
+0%{color:#f00}
+10%{color:#ff8000}
+20%{color:#ff0}
+30%{color:#80ff00}
+40%{color:#0f0}
+50%{color:#00ff80}
+60%{color:#0ff}
+70%{color:#0080ff}
+80%{color:#00f}
+90%{color:#8000ff}
+100%{color:#ff0080}
+}

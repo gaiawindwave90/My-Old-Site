@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Detect ad-blocking software - Example 3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+<div class="a">Advertisement</div>
+
+<script type="text/javascript">
+<!--
+	var adblock = true;
+//-->
+</script>
+<script type="text/javascript" src="ad/adframe.js"></script>
+<script type="text/javascript">
+<!--
+	if(adblock) {
+		var allElements = document.getElementsByTagName('div');
+		for (var i = 0; i < allElements.length; i++) {
+			if (allElements[i].className == 'a') {
+				allElements[i].innerHTML = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="float:left; margin-right:4px;"><input type="hidden" name="cmd" value="_s-xclick"><input type="image" src="http://images.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHkAYJKoZIhvcNAQcEoIIHgTCCB30CAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYA5nkPrpucilR/t5yTGJAJZpcg0gwPBQKbvDgp5BZ2iPlfN7yJeZDWsL3WyFtqLMyfnQNoXIXdoMejh10L0z567VHjUAd/3qhvPgVtKrIVrzkIhLXz1z3BLXhSCkBvJsInI8ab8evpjIhZ5dxPeNgDeL60NF5U/8xk9YQMQ3HvRUTELMAkGBSsOAwIaBQAwggEMBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECHWGXtZwIHargIHo0vXJjtYtHTkviN+ugkTGVTXToPBrfrnc4Z88O6IZV/OMR4z7J5nPrxnjTNpiQ4HUc174puByt2figxF5biuPKXhEXaXjBb74dHtyAje8I8HFg1ynHiok2iESereEM4e1/qjKZUdMVcBZKfWifEaYGddI77yOi/HJqs6cbwNo4cBeTxltZAk6lo8YYlmUwn0noXdHt0UzpfkfhF/atiYUxtwBZ/+duzL9zDeyuPiU99+clxG6lvHguSsetQaJsw8/siy9+2FcL4nq8NWfrFN5kZlO40ESNqNXD6PEnSYhryHq0G4CZHJaqaCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTA4MDcxNDEyMTIxN1owIwYJKoZIhvcNAQkEMRYEFMykNLMdk7xdq3M2KgFmidRA/mpAMA0GCSqGSIb3DQEBAQUABIGAijnI/tfPuk0BByIB17QnqPtkVxCebQzYBvaj9RZdMG7t7QfAmuoq1lXhwaccLIWtGWNVBuP5BRMOYkiR1BKYFCtFuWMOx5KwUYnVQOnmih9xDm+QWMdns9SAcvkWipPNbUqaAVe3Xgm0pKNAIJw0uDYeulOqC0ZrEA0IXVhuYw0=-----END PKCS7-----"></form><div style="font-size:x-small; font-family:Verdana; width:540px; padding:3px 10px 9px 0; text-align:justify;">The cost of running this website is covered by advertisements. If you like it please feel free to donate a small amount of money to secure the future of this website.</div>';	
+			}
+		}
+	}
+// http://www.paypal.de/spendenbutton
+// http://detect-ad-blocking-software.webconrad.com/
+//-->
+</script>
+
+</body>
+</html>

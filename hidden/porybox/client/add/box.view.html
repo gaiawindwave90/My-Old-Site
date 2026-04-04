@@ -1,0 +1,46 @@
+<md-dialog aria-label="Add new box">
+  <form name="addBox">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add new box</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="dialog.cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="column">
+          <md-input-container class="md-block">
+            <label>Name *</label>
+            <input required ng-model="dialog.name" type="text" name="test" class="dialog-close">
+            <div ng-messages="addBox.test.$error" role="alert">
+              <div ng-message="required">Name is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+              <label>Description</label>
+              <textarea ng-model="dialog.description" rows="5"></textarea>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+              <label>Visibility</label>
+              <md-select ng-model="dialog.visibility" name="visibility">
+                <md-option value="listed" ng-selected="dialog.visibility === 'listed'">listed</md-option>
+                <md-option value="unlisted" ng-selected="dialog.visibility === 'unlisted'"><i class="material-icons unlisted-lock small">lock_outline</i> unlisted</md-option>
+              </md-select>
+          </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="dialog.cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-click="dialog.answer()" ng-disabled="!dialog.canAdd()" type="submit">
+        Add
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
